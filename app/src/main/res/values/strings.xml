@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DogsApp</string>
+    <string name="error_api">Cannot obtain the list</string>
+    <string name="error_connection">Connection error</string>
 </resources>
