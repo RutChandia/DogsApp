@@ -18,5 +18,10 @@ fun DogsNav(
                 navController = navController
             )
         }
+
+        composable("detailScreen/{breed}") { backStackEntry ->
+            val breed = backStackEntry.arguments?.getString("breed") ?: ""
+            DetailScreen(breed = breed, navController = navController)
+        }
     }
 }

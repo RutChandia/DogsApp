@@ -6,4 +6,6 @@
     <string name="accept">Accept</string>
     <string name="api_error">API Error</string>
     <string name="try_again">Try Again</string>
+    <string name="back_to_home">home icon</string>
+    <string name="back">Back</string>
 </resources>
