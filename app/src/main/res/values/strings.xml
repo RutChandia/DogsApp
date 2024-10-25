@@ -2,4 +2,8 @@
     <string name="app_name">DogsApp</string>
     <string name="error_api">Cannot obtain the list</string>
     <string name="error_connection">Connection error</string>
+    <string name="search">search</string>
+    <string name="accept">Accept</string>
+    <string name="api_error">API Error</string>
+    <string name="try_again">Try Again</string>
 </resources>
