@@ -4,7 +4,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import cl.rutchandia.dogsapp.data.remote.ApiResponseState
-import cl.rutchandia.dogsapp.domain.model.DogBreeds
+import cl.rutchandia.dogsapp.domain.model.DogBreed
 import cl.rutchandia.dogsapp.domain.repository.DogBreedsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -18,9 +18,9 @@ class DogBreedsViewmodel @Inject constructor(
     private val repository: DogBreedsRepository
 ) : ViewModel() {
 
-    var apiState = mutableStateOf<ApiResponseState<List<DogBreeds>>?>(null)
+    var apiState = mutableStateOf<ApiResponseState<List<DogBreed>>?>(null)
         private set
-    var dogBreedList = MutableStateFlow<List<DogBreeds>?>(null)
+    var dogBreedList = MutableStateFlow<List<DogBreed>?>(null)
         private set
 
     init {
@@ -41,7 +41,7 @@ class DogBreedsViewmodel @Inject constructor(
         }
     }
 
-    private fun updateDogBreeds(list: List<DogBreeds>) {
+    private fun updateDogBreeds(list: List<DogBreed>) {
         dogBreedList.value = list
     }
 

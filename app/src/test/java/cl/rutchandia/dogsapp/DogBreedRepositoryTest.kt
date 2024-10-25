@@ -5,7 +5,7 @@ import cl.rutchandia.dogsapp.data.model.DogBreedsDTO
 import cl.rutchandia.dogsapp.data.remote.ApiResponseState
 import cl.rutchandia.dogsapp.data.remote.DogsApiService
 import cl.rutchandia.dogsapp.data.repository.DogBreedsRepositoryImpl
-import cl.rutchandia.dogsapp.domain.model.DogBreeds
+import cl.rutchandia.dogsapp.domain.model.DogBreed
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -13,7 +13,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class DogBreedsRepositoryTest {
+class DogBreedRepositoryTest {
     private val apiService: DogsApiService = mockk()
     private val mapper: DogsMapper = mockk()
     private val repository = DogBreedsRepositoryImpl(apiService, mapper)
@@ -27,8 +27,8 @@ class DogBreedsRepositoryTest {
             ), status = "success"
         )
         val expectedBreeds = listOf(
-            DogBreeds(name = "bulldog", subBreeds = listOf("boston", "english", "french")),
-            DogBreeds(name = "labrador", subBreeds = emptyList())
+            DogBreed(name = "bulldog"),
+            DogBreed(name = "labrador")
         )
         coEvery { apiService.getBreedsList() } returns dto
         coEvery { mapper.breedToDomain(dto) } returns expectedBreeds

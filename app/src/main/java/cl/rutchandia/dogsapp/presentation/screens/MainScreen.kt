@@ -23,7 +23,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import cl.rutchandia.dogsapp.R
 import cl.rutchandia.dogsapp.data.remote.ApiResponseState
-import cl.rutchandia.dogsapp.domain.model.DogBreeds
+import cl.rutchandia.dogsapp.domain.model.DogBreed
 import cl.rutchandia.dogsapp.presentation.components.CardBreedName
 import cl.rutchandia.dogsapp.presentation.components.CenteredProgressIndicator
 import cl.rutchandia.dogsapp.presentation.components.LoadingErrorBox
@@ -39,7 +39,9 @@ fun MainScreen(
 
     MainScreenContent(
         breeds = dogBreeds.value ?: listOf(),
-        onBreedSelected = {},
+        onBreedSelected = { breed ->
+            navController.navigate("detailScreen/$breed")
+        },
         onTryAgain = viewModel::tryAgain,
         apiState = apiState
     )
@@ -51,7 +53,7 @@ fun MainScreen(
 
 @Composable
 private fun MainScreenContent(
-    breeds: List<DogBreeds>,
+    breeds: List<DogBreed>,
     onBreedSelected: (String) -> Unit,
     onTryAgain: () -> Unit,
     apiState: ApiResponseState<*>?,
@@ -81,7 +83,7 @@ private fun MainScreenContent(
 
 @Composable
 private fun BreedList(
-    breeds: List<DogBreeds>, onBreedSelected: (String) -> Unit
+    breeds: List<DogBreed>, onBreedSelected: (String) -> Unit
 ) {
     var searchText by remember { mutableStateOf("") }
     val filteredBreeds = breeds.filter { filter ->
