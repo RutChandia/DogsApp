@@ -16,7 +16,7 @@ El proyecto sigue el patrón de arquitectura MVVM.
 
 ## Capturas de Pantalla
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <img src="app/assets/dogappdark.webp" alt="search" width="260">
-    <img src="app/assets/dogappsearch.webp" alt="info" width="260">
-    <img src="app/assets/dogappdetail.webp" alt="details" width="260">
+    <img src="assets/dogappdark.webp" alt="search" width="260">
+    <img src="assets/dogappsearch.webp" alt="info" width="260">
+    <img src="assets/dogappdetail.webp" alt="details" width="260">
 </div>
