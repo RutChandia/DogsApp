@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cl.rutchandia.dogsapp.R
 import coil.compose.AsyncImage
+import com.microsoft.appcenter.analytics.Analytics
 
 @Composable
 fun CardBreedName(breedName: String, onItemClick: (String) -> Unit) {
@@ -27,7 +28,10 @@ fun CardBreedName(breedName: String, onItemClick: (String) -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(4.dp)
-            .clickable { onItemClick(breedName) },
+            .clickable {
+                Analytics.trackEvent("BreedCardClicked: $breedName")
+                onItemClick(breedName)
+            },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
         ),
