@@ -97,8 +97,7 @@ dependencies {
     androidTestImplementation(libs.mockk.android)
 
     //AppCenter
-    val appCenterSdkVersion = "5.0.4"
-    implementation("com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}")
-    implementation("com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}")
+    implementation(libs.appcenter.analytics)
+    implementation(libs.appcenter.crashes)
 
 }
